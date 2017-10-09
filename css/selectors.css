@@ -1,0 +1,59 @@
+header {
+    border: 1px solid goldenrod;
+}
+
+.nav li {
+    display: inline-block;
+    padding: .25em 1em;
+    
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.disabled {
+    color: grey;
+}
+
+.disabled a,
+a > .disabled, 
+.disabled a,
+a > * .disabled, {
+    color: purple;
+}
+
+.month-list li a.disabled {
+    color: purple;
+}
+
+
+
+.active {
+    color: yellow;
+}
+
+#red {
+    color: red;
+}
+
+#blue {
+    color: blue;
+}
+
+#redBlue #red + h4 {
+    background-color: red;
+}
+
+#redBlue #blue + h4 {
+    background-color: blue;
+}
+
+.promo, .promo > * {
+    font-weight: bold;
+    color: gold;
+}
+
+.padded > span input {
+    height: 25px;
+}
