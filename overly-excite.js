@@ -9,7 +9,7 @@ let newSentence = ["Look", "friggin", "out", "There's", "punctuation", "everywhe
 
 let storedString = "";
 let  punctation = "";
-
+//test
 function addExcitement (theWordArray, punk) {
     for (var i = 0; i < theWordArray.length; i++) {
         let textyText = theWordArray[i];
