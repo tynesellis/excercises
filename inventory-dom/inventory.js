@@ -8,10 +8,10 @@ for (let arr in HomeInventory) { // start by looping through the returned object
         let currentObject = currentArray[i]; //set currentObject to whatever i === while going through the array. each time, i will be selecting an object
             //now we're going start adding to sectionHTML (see above loop) while writing to the DOM in that section
             sectionHTML.innerHTML +=  `<section class="${currentObject.type.replace(/ /g, "")}">
-            <h2 id="${currentObject.name.replace(/ /g, "")}">${currentObject.name}</h2>
-            <p id="${currentObject.type.replace(/ /g, "")}">Type: ${currentObject.type.charAt(0).toUpperCase() + currentObject.type.slice(1, (currentObject.type.length +1))}</p>
-            <p id="${currentObject.location.replace(/ /g, "")}">Location: ${currentObject.location}</p>
-            <p id="${currentObject.description.replace(/ /g, "")}">Description: ${currentObject.description}</p>
+            <h2 class="${currentObject.type.replace(/ /g, "")}_Name">${currentObject.name}</h2>
+            <p class="${currentObject.type.replace(/ /g, "")}_Type">Type: ${currentObject.type.charAt(0).toUpperCase() + currentObject.type.slice(1, (currentObject.type.length +1))}</p>
+            <p class="${currentObject.type.replace(/ /g, "")}_Location">Location: ${currentObject.location}</p>
+            <p class="${currentObject.type.replace(/ /g, "")}_Description">Description: ${currentObject.description}</p>
             </section>`; //classes and ids are populated with the corresponding key from the objects
             // replace(/ /g, "") added to take out spaces to conform to css naming conventions
         
