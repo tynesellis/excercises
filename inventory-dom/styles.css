@@ -1,0 +1,27 @@
+.furniture, .electronics {
+    color: navy;
+    background-color: orange;
+    padding: .5em 1em;
+    margin-bottom: .5em;
+}
+
+.furniture h2, .electronics h2 {
+    border-bottom: .5px solid navy;
+    padding-bottom: .5em;
+
+}
+
+.outdoors    {
+    color: orange;
+    background-color: navy;
+    padding: .5em 1em;
+    margin-bottom: .5em;    
+}
+
+.outdoors h2 {
+    border-bottom: .5px solid orange        ;
+    padding-bottom: .5em;
+
+}
+
+/* colorScheme: War Eagle */
