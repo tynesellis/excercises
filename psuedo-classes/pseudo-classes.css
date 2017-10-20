@@ -1,0 +1,23 @@
+li {
+    list-style-type: none;
+    display: inline;
+}
+
+span {
+    display: block;
+    border: 1px solid black;
+    margin: 25px;
+}
+
+.n-child section:nth-of-type(2n+2) {
+    border: 1px solid black;
+}
+
+.top li:not(:last-of-type)::after {
+    content: ","
+}
+
+.n-type section:nth-last-of-type(2n+1) {
+    color: blue;
+}
+
