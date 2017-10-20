@@ -1,3 +1,35 @@
+
+#nav li {
+    list-style-type: none;
+    display: inline;
+}
+
+#nav a {
+    border: 5px dotted pink;
+    background-color: magenta;
+    color: white;
+    padding: 2px 25px;
+    margin: 1em;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px purple;
+}
+
+#nav a:hover {
+    color: black;
+    background-color: yellow;
+}
+
+#nav a:active {
+    padding: 2px 30px;
+}
+
+#nav {
+    padding: 2em;
+}
+
+
 li {
     list-style-type: none;
     display: inline;
@@ -19,5 +51,31 @@ span {
 
 .n-type section:nth-last-of-type(2n+1) {
     color: blue;
+}
+
+.first-of-type aside:first-of-type {
+    background-color: lime;
+}
+
+.first-of-type section:first-of-type {
+    background-color: purple;
+}
+
+.three section {
+    background-color: orange;
+}
+
+.three :first-child {
+    background-color: goldenrod;
+}
+
+.three :last-child {
+    background-color: darkslategray;
+}
+
+article::before {
+    content: "Article parent element";
+    border: 1px dashed grey;
+    background-color: royalblue;
 }
 
