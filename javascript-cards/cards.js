@@ -12,15 +12,15 @@ const idGenerator = function* () {
 const uniqueID = idGenerator();//instance of idGenerator
 
 document.getElementById("createButton").addEventListener("click", function(){//target the create button to trigger new DOM conent
-    let newCardText = document.getElementById("initialText").value;//get the text typed into the text area input
+    let newCardText = document.getElementById("initialText");//get the text typed into the text area input
     let idPlugIn = uniqueID.next().value;//get a unique id number to be added to the id's below
     newHTML.innerHTML += `
         <div class="card" id="card_${idPlugIn}">
-            <section class="cardText">${newCardText}</section>
+            <section class="cardText">${newCardText.value}</section>
             <button class="byeBye" id="deleteButton_${idPlugIn}">Delete</button>
         </div>
     `
-    document.getElementById("initialText").value = "";//reset form field
+    newCardText.value = "";//reset form field
 });
 
 document.addEventListener("click", function(event){//listen for any click event 
