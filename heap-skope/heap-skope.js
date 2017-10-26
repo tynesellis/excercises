@@ -46,32 +46,30 @@ const gemHeapSkope = function () { // No parameter needed
     */
     return {
         "process": function (requestedMineral) {//=================================================================================
-            
+
             /*
             Subtract 5 from the total kilograms available in
             the gem mine, but make sure you stop when there
             are no minerals left.
             */
-           
-            if (GemMine[requestedMineral].kilograms >= 5) {
+
+            if (requestedMineral !== undefined && GemMine[requestedMineral].kilograms >= 5) {
                 GemMine[requestedMineral].kilograms -= 5;
                 console.log(GemMine[requestedMineral].kilograms);
                 return {
                     "mineral": requestedMineral,
                     "amount": 5
                 }
-            } else {
-                // let lastBit = GemMine[requestedMineral].kilograms;
-                // console.log("lastBit" + lastBit)
-                // GemMine[requestedMineral].kilograms -= lastBit;
-                // console.log("requested" + GemMine[requestedMineral].kilograms);
-                // return {
-                //     "mineral": requestedMineral,
-                //     "amount": lastBit 
-                // }
-                console.log("hi")
+            } else if (requestedMineral !== undefined && GemMine[requestedMineral].kilograms > 0) {
+                let lastBit = GemMine[requestedMineral].kilograms;
+                GemMine[requestedMineral].kilograms -= lastBit;
+                console.log(GemMine[requestedMineral].kilograms)
+                return {
+                    "mineral": requestedMineral,
+                    "amount": lastBit
+                }
             }
-            
+
         }//====================================================================================================================
     }
 }
@@ -80,7 +78,6 @@ const heapSkopeContainers = [];//final collection of containers
 The SkopeManager variable represents the object with the
 `process` method on it.
 */
-const SkopeManager = gemHeapSkope();
 
 const gemContainerGenerator = function* () {//generate a new container with unique id - only 30 containers available
     let currentContainer = 1
@@ -95,32 +92,24 @@ const gemContainerGenerator = function* () {//generate a new container with uniq
 const gemContainerInstance = gemContainerGenerator();//instance of container
 let currentContainer = gemContainerInstance.next().value;//call first container
 
-let kgCount = 0;
-while (SkopeManager.process("Amethyst") !== undefined) {
-    if (kgCount < 561) {
-        currentContainer.orders.push(SkopeManager.process("Amethyst"));
-        currentContainer.orders.forEach(function (obj) {
-            kgCount += obj.amount;
-            console.log(kgCount)
-        })
-    } else {
-        heapSkopeContainers.push(currentContainer);
-        currentContainer = gemContainerInstance.next().value;
-        currentContainer.orders.push(SkopeManager.process("Amethyst"));
-        currentContainer.orders.forEach(function (obj) {
-            kgCount += obj.amount;
-        });
-    }
+const SkopeManager = gemHeapSkope();
+
+currentContainer.orders.unshift(SkopeManager.process("Amethyst"));
+while (currentContainer.orders[0].amount <= 5) {
+        currentContainer.orders.unshift(SkopeManager.process("Amethyst"));
+        if (currentContainer.orders[0].amount < 5) {
+            break
+        }
 }
+
+console.log(currentContainer)
+
+
 
 /*
 Process the gems in any order you like until there none
 left in the gem mine.
 */
-// SkopeManager.process("Amethyst")
-// SkopeManager.process("Bloodstone")
-// (SkopeManager.process("Emerald")
-
 
 /*
 Create 30 storage containers, which is how many a hëap-skope
