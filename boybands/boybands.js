@@ -11,7 +11,7 @@ let htmlRef = [bandElement, veggieElement];
 
 // Execute a for loop that will iterate over the arrays
 for (let loopTracker = 0; loopTracker < arrayz.length; loopTracker += 1) {
-    ref = htmlRef[loopTracker];
+    ref = htmlRef[loopTracker]; //stores what will be written in HTML
     let currentArray = arrayz[loopTracker];
     for (var i = 0; i < currentArray.length; i++) {
           // Get a reference to the current item in the  array
