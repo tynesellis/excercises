@@ -1,0 +1,29 @@
+.listing {
+    width: 300px;
+    background-color: ivory;
+    border: 1px solid khaki;
+    padding: 5px;
+}
+
+.listing_make-model {
+    color: slategray;
+    font-size: 18px;
+}
+
+.listing_price {
+    color: yellowgreen;
+    font-size: 16px;
+}
+
+.listing_specs {
+    color: black;
+    font-size: 12px;
+}
+
+.listing_specs--mileage{
+    color: crimson;
+}
+
+.listing_specs--engine{
+    color: darkolivegreen;
+}
