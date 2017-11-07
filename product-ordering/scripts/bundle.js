@@ -8,7 +8,7 @@ reviewsContr.addComments();
 const createNav = {
     "updateNav": document.getElementById('navBar').innerHTML = `
     <ul>
-        <li>Betsy</li>
+        <li><a href="#">Betsy</a></li>
         <li>Test</li>
         <li>Test</li>
         <li>Test</li>
@@ -29,6 +29,7 @@ const writeProducts = {
         <p>Decription: ${product.description}</p>
         <p>Price: ${product.price}</p>
         <p>Quantity: ${product.quantity}</p>
+        <h5>Reviews:</h5>
         </section>
         `
     })
@@ -76,7 +77,9 @@ const productsFactory = {
             })
         }
         productsDB.push(createProduct("Draw Shave", "Double handled draw shave for shaping wood.", "$25", 1, "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/ZiehmesserTop.jpeg/700px-ZiehmesserTop.jpeg"));
-
+        productsDB.push(createProduct("Block Plane", "Planes end wood.", "$35", 1, "https://i.ebayimg.com/images/m/mCYMBpafbReAvyJDsjfaDFw/s-l1600.jpg"));
+        productsDB.push(createProduct("Chisels", "Set: 3/4, 1/2, and mortising chisels", "$35", "1 Set of 3", "https://www.qy1.de/img/mukoumachinomi309540.jpg"));
+        
         return productsDB;
     }
 
@@ -119,6 +122,12 @@ const trolls = {
             })
         }
         trollDB.push(createComment("#product_1", "This didn't make my internet run any faster.  I guess doing things the odl fashon way isn't as cracked up as they sold me on for with in."));
+        trollDB.push(createComment("#product_1", "Love it.  Works gr8!"));
+        trollDB.push(createComment("#product_2", "Love and block planes cover a multitude of sins"));
+        trollDB.push(createComment("#product_2", "I used this for a hedache and it made it WORSE!!!  DO NOT BUY"));
+        trollDB.push(createComment("#product_3", "Good for mortise and tennon work"));
+        trollDB.push(createComment("#product_3", "Mine are now evidence.  Worked great."));
+        
         return trollDB;
     }
 }

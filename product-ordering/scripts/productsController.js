@@ -9,6 +9,7 @@ const writeProducts = {
         <p>Decription: ${product.description}</p>
         <p>Price: ${product.price}</p>
         <p>Quantity: ${product.quantity}</p>
+        <h5>Reviews:</h5>
         </section>
         `
     })

@@ -1,7 +1,7 @@
 const createNav = {
     "updateNav": document.getElementById('navBar').innerHTML = `
     <ul>
-        <li>Betsy</li>
+        <li><a href="#">Betsy</a></li>
         <li>Test</li>
         <li>Test</li>
         <li>Test</li>
