@@ -1,7 +1,5 @@
-const navEl = document.getElementById('navBar');
-
 const createNav = {
-    "updateNav": navEl.innerHTML = `
+    "updateNav": document.getElementById('navBar').innerHTML = `
     <ul>
         <li>Betsy</li>
         <li>Test</li>
