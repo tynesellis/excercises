@@ -7,8 +7,10 @@ app.controller("EmployeeCtrl", function ($scope, $http) {
             "firstName": $scope.newEmployee.firstName,
             "lastName": $scope.newEmployee.lastName,
             "employmentStart": Date.now(),
-            "employmentEnd": "firebaseiswierdaboutnull"
+            "employmentEnd": "firebaseiswierdaboutnull",
+            "photo": $scope.newEmployee.photo
         }
+        debugger
         $http.post("https://employees-3a3ff.firebaseio.com/.json", JSON.stringify(newEmployee)).then(getEmployees)
         $scope.newEmployee.firstName = $scope.newEmployee.lastName = ""
     };
