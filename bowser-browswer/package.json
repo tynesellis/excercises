@@ -1,0 +1,14 @@
+{
+  "name": "bowser-browswer",
+  "version": "1.0.0",
+  "description": "calc",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "uniq": "^1.0.1"
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular Employees</title>
+</head>
+
+<body ng-app="EmployeeMgmt">
+
+    <section ng-controller="EmployeeCtrl">
+        <form ng-submit="addEmployee()">
+            <input type="text" placeholder="First Name" ng-model="newEmployee.firstName">
+            <input type="text" placeholder="Last Name" ng-model="newEmployee.lastName">
+            <button>Submit</button>
+        </form>
+        <ul ng-repeat="(key, employee) in employees">
+            <li ng-if="employee.employmentEnd === 'firebaseiswierdaboutnull'">{{employee.lastName}}, {{employee.firstName}}
+                <button ng-click="fireEmployee(employee, key)">Fire Employee</button>
+                <button ng-click="eraseEmployee(employee, key)">Erase Employee</button>
+            </li>
+        </ul>
+
+    </section>
+
+
+    <script src="lib/node_modules/angular/angular.js"></script>
+    <script src="./app/EmployeeCtrl.js"></script>
+</body>
+
+</html>
