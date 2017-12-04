@@ -1,0 +1,9 @@
+<div>
+    <input type="text" ng-model="query" />
+</div>
+
+<div ng-repeat="person in employees | filter: query">
+    <a href="#!/employees/detail/{{ person.id }}" ng-if="person.employmentEnd === 0">{{ person.firstName }} {{ person.lastName }}</a>
+</div>
+
+<a href="#!/employees/new">Hire Folks</a>
