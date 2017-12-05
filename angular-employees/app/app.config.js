@@ -6,6 +6,11 @@ app.constant("FIREBASE_CONFIG", {
     storageBucket: "employees-3a3ff.appspot.com",
     messagingSenderId: "534181048983"
 })
+
+angular.module("EmployeeApp").run(function (FIREBASE_CONFIG) {
+    firebase.initializeApp(FIREBASE_CONFIG)
+})
+
 let isAuth = AuthFactory => new Promise((resolve, reject) => {
     if (AuthFactory.isAuthenticated()) {
         console.log("User is authenticated, resolve route promise")
@@ -14,11 +19,6 @@ let isAuth = AuthFactory => new Promise((resolve, reject) => {
         console.log("User is not authenticated, reject route promise")
         reject()
     }
-})
-
-
-angular.module("EmployeeApp").run(function (FIREBASE_CONFIG) {
-    firebase.initializeApp(FIREBASE_CONFIG)
 })
 
 angular.module("EmployeeApp").config(function ($routeProvider) {

@@ -6,9 +6,7 @@ angular.module("EmployeeApp")
             AuthFactory.authenticate(credentials).then(function (didLogin) {
                 $scope.auth.email = {}
                 $scope.auth.password = {}
-                $timeout(() => {
-                    $location.path("/employees/list")
-                }, 100)
+                $location.path("/employees/list")
             })
         }
 
